@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.poligran.paradigmas.edu.POO;
+package co.edu.poligran.paradigmas.modelo;
 
 /**
  *
@@ -13,6 +13,9 @@ public class Estudiante {
     private String nombre;
     private int edad;
 
+    public Estudiante() {
+    }
+    
     public Estudiante(int id, String nombre, int edad) {
         this.id = id;
         this.nombre = nombre;
@@ -40,7 +43,16 @@ public class Estudiante {
     }
 
     public void setEdad(int edad) {
+       if(edad>=0){
         this.edad = edad;
+        }else{
+           System.out.println("la edad no puede ser un numero negativo");
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Estudiante{" + "id=" + id + ", nombre=" + nombre + ", edad=" + edad + '}';
     }
     
 
